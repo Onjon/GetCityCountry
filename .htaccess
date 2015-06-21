@@ -1,0 +1,9 @@
+# Developer : Onjon Shahadat Hossain
+# Version : 1.0.1
+# Release Date : May, 2015
+
+# TURN ON THE REWRITE ENGINE
+RewriteEngine On 
+# URL SET 
+RewriteRule    ^api/find-city-country//?$ location.php    [NC,L]    # ALL PAGES
+#RewriteRule ^([^\.]+)$ $1.php [NC] #newly added
