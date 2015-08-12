@@ -2,8 +2,10 @@
 // GET CITY & COUNTRY BY LATITUDE & LONGITUDE
 
 // Initialize
+error_reporting(0); // enable error & warring hide
 $fl = 1; 
 $arr = array();
+
 
 // CHECK PARAM
 if( !isset( $_GET[ 'lat' ] ) ) {
@@ -14,12 +16,20 @@ if( empty( $_GET[ 'lat' ] ) ) {
     $arr[ 'message' ] = "No Latitude found !" ;
     $fl = 0;
 }
+if( !is_numeric( $_GET[ 'lat' ] ) ) {
+    $arr[ 'message' ] = "Invalid Latitude !" ;
+    $fl = 0;
+}
 if( !isset( $_GET[ 'lng' ] ) ) {
     $arr[ 'message' ] = "No Longitude found !" ;
     $fl = 0;
 }
 if( empty( $_GET[ 'lng' ] ) ) {
     $arr[ 'message' ] = "No Longitude found !" ;
+    $fl = 0;
+}
+if( empty( $_GET[ 'lng' ] ) ) {
+    $arr[ 'message' ] = "No Longitude !" ;
     $fl = 0;
 }
 
@@ -42,6 +52,7 @@ if( $fl == 1 ) {
     
     // REQUEST URL
     $url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=".$lat.",".$lng."&sensor=false";
+    
 
     // CURL for GET ADDRESS DETAILS 
     $ch = curl_init();
