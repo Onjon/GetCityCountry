@@ -2,7 +2,7 @@
 Get Country and City by Latitude and Longitude
 
 
-Request ----------------------------------------------------------------------
+REQUEST ----------------------------------------------------------------------
 URL             : *SITE_URL*/api/find-city-country/*latitude*/*longitude*/
 Parametter      : Latitude, Longitude
 Output          : Status , city, country
@@ -11,7 +11,7 @@ Charset         : utf-8
 
 
 
-EXAMPLE REQUEST  ----------------------------------------------------------------------
+EXAMPLE  ----------------------------------------------------------------------
 Request URL     : *SITE_URL*/api/find-city-country/19.075984/72.877656/
 Output          : {"city":"Mumbai","country":"India","status":1}
 
