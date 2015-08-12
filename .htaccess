@@ -1,9 +1,13 @@
-# Developer : Onjon Shahadat Hossain
-# Version : 1.0.1
-# Release Date : May, 2015
+# Developer : 
+# @name : Onjon Shahadat Hossain
+# @Version : 1.0.1
+# @Release : May, 2015
 
 # TURN ON THE REWRITE ENGINE
 RewriteEngine On 
-# URL SET 
-RewriteRule    ^api/find-city-country//?$ location.php    [NC,L]    # ALL PAGES
-#RewriteRule ^([^\.]+)$ $1.php [NC] #newly added
+
+# ERROR LIST
+ErrorDocument 404 "404 | Requested page not found !"
+
+# SET URL
+RewriteRule    ^api/find-city-country/([A-Za-z0-9-.]+)/([A-Za-z0-9-.]+)//?$ location.php?lat=$1&&lng=$2    [NC,L]
